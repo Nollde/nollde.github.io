@@ -1,3 +1,5 @@
-remote_theme: pages-themes/cayman@v0.2.0
 title: Dennis Noll
 description: Webpage of Dennis Noll
+remote_theme: mmistakes/minimal-mistakes
+plugins:
+  - jekyll-include-cache
