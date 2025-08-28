@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dennis Noll - Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .typing-wrapper {
+            display: inline-block;
+            position: relative;
+            width: 12ch;
+            /* reserve space = longest word length */
+        }
+
+        .typing {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            vertical-align: bottom;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            /* coding font */
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 0.4em;
+            height: 1.2em;
+            background: #333;
+            margin-left: 2px;
+            animation: blink 1s step-start infinite;
+            vertical-align: text-bottom;
+            /* instead of bottom */
+        }
+
+        @keyframes blink {
+            50% {
+                background: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen">
+    <div class="max-w-2xl p-12 bg-white shadow-lg rounded-2xl text-center">
+        <img src="assets/profile_square.jpg" alt="Profile picture"
+            class="w-40 h-40 mx-auto rounded-full shadow-md mb-6">
+        <!-- <h1 class="text-3xl font-bold mb-3">Dennis Noll</h1>
+    <p class="mb-2 text-gray-600 text-lg">Particle Physicist | Researcher | Curious about the universe</p> -->
+        <p class="mb-6 text-gray-700 text-lg">
+            Hi, I'm Dennis, I
+            <span class="typing-wrapper text-left">
+                <span id="typing" class="typing"></span><span class="cursor"></span>
+            </span>
+            scientific data analyses
+        </p>
+
+        <div class="flex justify-center space-x-6 mb-6">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/dennis-noll/" class="hover:opacity-80">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/nollde" class="hover:opacity-80">
+                <i class="fab fa-github fa-lg"></i>
+            </a>
+
+            <!-- GitLab -->
+            <a href="https://gitlab.cern.ch/dnoll" class="hover:opacity-80">
+                <i class="fab fa-gitlab fa-lg"></i>
+            </a>
+        </div>
+
+        <p class="text-sm text-gray-500">© 2025 Dennis Noll</p>
+    </div>
+
+    <script>
+        const words = ["accelerate", "improve", "automate", "manage", "reproduce", "code"];
+        let i = 0; // word index
+        let j = 0; // letter index
+        let isDeleting = false;
+        const speed = 120;   // typing speed
+        const pauseAfterWord = 1500;  // pause after typing a full word
+        const pauseAfterDelete = 600; // pause after deleting a word
+        const typingElement = document.getElementById("typing");
+
+        function type() {
+            const currentWord = words[i];
+
+            if (!isDeleting) {
+                typingElement.textContent = currentWord.substring(0, j++);
+            } else {
+                typingElement.textContent = currentWord.substring(0, j--);
+            }
+
+            // When word is fully typed
+            if (!isDeleting && j > currentWord.length) {
+                isDeleting = true;
+                setTimeout(type, pauseAfterWord);
+                return;
+            }
+
+            // When word is fully deleted
+            if (isDeleting && j < 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+                j = 0; // reset
+                setTimeout(type, pauseAfterDelete);
+                return;
+            }
+
+            setTimeout(type, isDeleting ? speed / 2 : speed);
+        }
+
+        type();
+    </script>
+</body>
+
+</html>
