@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <meta charset="UTF-8">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body>
-  <header>
-    <h2><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h2>
-  </header>
 
-  <main>
-    <h1>{{ page.title }}</h1>
-    <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
-    {{ content }}
-  </main>
+<body class="text-gray-100 font-sans flex flex-col items-center min-h-screen px-6">
+    <header>
+        <h2><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h2>
+    </header>
 
-  <footer>
-    <p>© {{ site.time | date: "%Y" }} {{ site.author }}</p>
-  </footer>
+    <main class="max-w-3xl text-center mb-16">
+        <h1>{{ page.title }}</h1>
+        <!-- <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p> -->
+        <p class="text-lg leading-relaxed">
+            {{ content }}
+        </p>
+
+    </main>
+
+    <footer class="mb-6 text-sm text-gray-300">
+        © 2025 Dennis Noll
+    </footer>
+
 </body>
+
 </html>
