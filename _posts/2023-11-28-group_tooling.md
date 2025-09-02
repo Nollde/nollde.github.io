@@ -3,7 +3,7 @@ layout: post
 title: "Tooling"
 date: 2023-11-28
 ---
-# Tooling Meeting WriteUp (23/11/28):
+# Tooling Meeting WriteUp (23/11/28)
 
 ## Art of Development:
 

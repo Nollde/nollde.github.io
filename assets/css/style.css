@@ -21,10 +21,6 @@ body {
   padding: 0;
 }
 
-.post h1, .post h2, .post h3 {
-  color: #1e3a8a;
-}
-
 .typing-wrapper {
     display: inline-block;
     position: relative;
