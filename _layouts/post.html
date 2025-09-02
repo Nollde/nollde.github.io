@@ -4,34 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
 <body>
-<main>
-      {{ content }}
-</main>
-
-  
-</body>
-<!-- <body class="text-gray-100 font-sans flex flex-col items-center min-h-screen px-6">
     <header>
         <h2><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h2>
     </header>
-
-    <main class="max-w-3xl mb-16">
+    <main class="post">
         <h1>{{ page.title }}</h1>
-        <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
         {{ content }}
-
     </main>
 
-    <footer class="mb-6 text-sm text-gray-300">
+    <footer>
         © 2025 Dennis Noll
     </footer>
 
-</body> -->
+</body>
 
 </html>
