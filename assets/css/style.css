@@ -1,0 +1,62 @@
+/* assets/css/style.css */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* or your chosen font */
+  background-image: radial-gradient(
+      circle at right,
+      rgba(59, 130, 246, 0.6),
+      transparent 70%
+    ),
+    linear-gradient(to top right, rgb(54, 175, 136), rgba(27, 139, 186, 1));
+  background-attachment: fixed; /* so it doesn’t scroll weird */
+  background-size: cover;
+  color: #111827; /* nice dark gray text */
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+.post {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.post h1, .post h2, .post h3 {
+  color: #1e3a8a; /* deep blue for headings */
+}
+
+.typing-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 10.5ch;
+    /* reserve space = longest word length */
+}
+
+.typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: bottom;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    /* coding font */
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.4em;
+    height: 1.2em;
+    background: #FFF;
+    margin-left: 2px;
+    animation: blink 1s step-start infinite;
+    vertical-align: text-bottom;
+    /* instead of bottom */
+}
+
+@keyframes blink {
+    50% {
+        background: transparent;
+    }
+}

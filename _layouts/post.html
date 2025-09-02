@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header style="text-align:center; padding: 2rem;">
+    <h2><a href="{{ '/' | relative_url }}" style="text-decoration:none; color:white;">
+      {{ site.title }}
+    </a></h2>
+  </header>
+
+  <main>
+    <div class="post">
+      <h1>{{ page.title }}</h1>
+      <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
+      {{ content }}
+    </div>
+  </main>
+
+  <footer style="text-align:center; margin-top: 2rem; color: white;">
+    <p>© {{ site.time | date: "%Y" }} {{ site.author }}</p>
+  </footer>
+</body>
+</html>
