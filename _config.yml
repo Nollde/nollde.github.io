@@ -1,5 +1,6 @@
-title: Dennis Noll
-description: Webpage of Dennis Noll
-remote_theme: mmistakes/minimal-mistakes
-plugins:
-  - jekyll-include-cache
+theme: minima
+locale: "en-US"
+title: "(...)"
+description: "Postdoctoral Researcher @ Stanford"
+baseurl: ""
+url: "https://nollde.github.io"
