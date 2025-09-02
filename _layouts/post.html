@@ -7,21 +7,17 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <header style="text-align:center; padding: 2rem;">
-    <h2><a href="{{ '/' | relative_url }}" style="text-decoration:none; color:white;">
-      {{ site.title }}
-    </a></h2>
+  <header>
+    <h2><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h2>
   </header>
 
   <main>
-    <div class="post">
-      <h1>{{ page.title }}</h1>
-      <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
-      {{ content }}
-    </div>
+    <h1>{{ page.title }}</h1>
+    <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
+    {{ content }}
   </main>
 
-  <footer style="text-align:center; margin-top: 2rem; color: white;">
+  <footer>
     <p>© {{ site.time | date: "%Y" }} {{ site.author }}</p>
   </footer>
 </body>
